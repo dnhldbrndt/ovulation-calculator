@@ -1,0 +1,73 @@
+/* Calendar container */
+.react-calendar {
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navigation buttons */
+.react-calendar__navigation button {
+  color: #000;
+  min-width: 44px;
+  background: none;
+  font-size: 1.2em;
+  margin-top: 8px;
+  border: none;
+}
+
+.react-calendar__navigation button:disabled {
+  background-color: #f0f0f0;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+}
+
+/* Weekdays */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  color: #6d6d6d;
+}
+
+/* Days */
+.react-calendar__tile {
+  max-width: 100%;
+  width: 14.2857%; /* This ensures 7 tiles fit in a row */
+  padding: 2px;
+  background: none;
+  text-align: center;
+  line-height: 1.5em;  
+  border: none;
+  aspect-ratio: 1 / 1; /* Ensures the tile is a square */
+}
+
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background: #e0e0e0;
+}
+
+.react-calendar__tile--now {
+  background: #ffff76;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+  background: #ffffa0;
+}
+
+.react-calendar__tile--active {
+  background: #00aaff;
+  color: white;
+  border-radius: 6px;
+}
+
+.react-calendar__tile--active:enabled:hover,
+.react-calendar__tile--active:enabled:focus {
+  background: #1087ff;
+}
