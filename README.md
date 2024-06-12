@@ -3,14 +3,11 @@ This is a simple ovulation calculator built with React. The calculator helps use
 
 ## Table of Contents
 
-- [Features](#features)
-- [Demo](#demo)
+- [Features](#features)´
 - [Installation](#installation)
 - [Usage](#usage)
 - [Technologies](#technologies)
 - [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ## Features
 
@@ -19,10 +16,6 @@ This is a simple ovulation calculator built with React. The calculator helps use
 - Calculate the fertile window and ovulation day.
 - Display results in a user-friendly format.
 - Responsive design for mobile and desktop users.
-
-## Demo
-
-A live demo of the application can be found [here](#). *(Include the link to your live demo if available)*
 
 ## Installation
 
@@ -60,4 +53,4 @@ To run the ovulation calculator locally, follow these steps:
 - React: Frontend library for building user interfaces.
 - JavaScript: Programming language for web development.
 - HTML5 & CSS3: Markup and styling for the application.
-- Date-fns: A modern JavaScript date utility library.
+- React Calendar: A flexible and customizable calendar component for React.

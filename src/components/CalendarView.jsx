@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import "../assets/style.css";
-import Calendar from 'react-calendar'
+import Calendar from 'react-calendar';
 
 // Array of month names
 const months = [
@@ -17,18 +17,18 @@ const months = [
     "November",
     "December"
 ];
- 
- 
-const CalendarView = () => {
+
+const CalendarView = ({ onDateChange }) => {
   const [date, setDate] = useState(new Date());
 
   const onChange = newDate => {
     setDate(newDate);
+    onDateChange(newDate); // Pass the selected date to the parent component
   };
 
-return(
-  <div>
-<Calendar
+  return (
+    <div>
+      <Calendar
         onChange={onChange}
         value={date}
         // Optionally, you can include more props to customize the calendar
@@ -37,9 +37,8 @@ return(
       <p className="selected-date">
         Selected Date: {date.toDateString()}
       </p>
-	
-  </div>
-)
+    </div>
+  );
 }
 
-export default CalendarView
+export default CalendarView;
