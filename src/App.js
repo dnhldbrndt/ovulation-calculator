@@ -1,18 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg' 
+import { Routes, Route } from "react-router-dom" 
+import './App.css' 
 import Calendar from 'react-calendar'
-import "./assets/calendar-style.css";
+import "./assets/calendar-style.css" 
 import Input from "./components/Input" 
 import Calculator from "./components/Calculator" 
 import CalendarView from "./components/CalendarView"
+import MenstrualCycle from './components/MenstrualCycle' 
+
 function App() {
   return (
-    <div className="App">
-		<h1>Ovulation Calculator </h1>
-		<div className="page-section">  
-		<Calculator />
- </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Calculator/>} />
+      <Route path="/cycle" element={<MenstrualCycle/>} />
+    </Routes>
   );
 }
 
