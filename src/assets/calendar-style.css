@@ -70,3 +70,16 @@
 .react-calendar__tile--active:enabled:focus {
   background: #1087ff;
 }
+
+/* Add this to your existing CSS file */
+
+.fertile-window {
+  background-color: #ffa500;
+  color: white;
+  border-radius: 6px;
+}
+
+.fertile-window:hover,
+.fertile-window:focus {
+  background-color: #ffcc80;
+}

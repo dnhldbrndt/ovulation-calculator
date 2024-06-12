@@ -11,7 +11,7 @@ function App() {
 		<h1>Ovulation Calculator </h1>
 		<div className="page-section">  
 		<Calculator />
-		<Input /></div>
+ </div>
     </div>
   );
 }

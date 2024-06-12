@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import CalendarView from './CalendarView';
+import Input from './Input';
+import Dates from './Dates';
 import "../assets/style.css";
 
 const Calculator = () => {
@@ -38,22 +40,12 @@ const Calculator = () => {
     <div>
       <h2>Ovulation Calculator</h2>
       <CalendarView onDateChange={handleDateChange} />
-      <div>
-        <label>
-          Average Cycle Length:
-          <input
-            type="number"
-            value={averageCycleLength}
-            onChange={handleCycleLengthChange}
-            min="21"
-            max="35"
-          />
-        </label>
-      </div>
+      <Input value={averageCycleLength} onChange={handleCycleLengthChange} />
       {ovulationDay && fertileWindow && (
         <div>
           <p>Ovulation Day: {ovulationDay.toDateString()}</p>
           <p>Fertile Window: {fertileWindow.start.toDateString()} - {fertileWindow.end.toDateString()}</p>
+          <Dates fertileWindow={fertileWindow} />
         </div>
       )}
     </div>
