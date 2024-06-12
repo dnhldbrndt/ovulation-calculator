@@ -36,14 +36,13 @@
 
 /* Days */
 .react-calendar__tile {
-  max-width: 100%;
-  width: 14.2857%; /* This ensures 7 tiles fit in a row */
+  width: calc(100% / 7); /* This ensures 7 tiles fit in a row */
   padding: 2px;
   background: none;
   text-align: center;
   line-height: 1.5em;  
   border: none;
-  aspect-ratio: 1 / 1; /* Ensures the tile is a square */
+  box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
 .react-calendar__tile:enabled:hover,
