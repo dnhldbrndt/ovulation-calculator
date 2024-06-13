@@ -24,7 +24,7 @@ To run the ovulation calculator locally, follow these steps:
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/yourusername/ovulation-calculator.git
+    git clone https://github.com/dnhldbrndt/ovulation-calculator.git
     cd ovulation-calculator
     ```
 
