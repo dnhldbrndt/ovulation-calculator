@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import CalendarView from './CalendarView';
 import Input from './Input';
 import Dates from './Dates';
-import "../assets/style.css";
+import Header from './Header';
+import "../assets/calendar-style.css"; // Import CSS Module
 
 const Calculator = () => {
   const [lastPeriodDate, setLastPeriodDate] = useState(null);
@@ -38,6 +39,7 @@ const Calculator = () => {
 
   return (
     <div>
+      <Header/>
       <h2>First Day of Your Last Period</h2>
       <CalendarView onDateChange={handleDateChange} />
       <Input value={averageCycleLength} onChange={handleCycleLengthChange} />

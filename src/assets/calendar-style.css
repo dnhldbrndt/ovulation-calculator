@@ -1,5 +1,5 @@
 /* Calendar container */
-.react-calendar {
+.reactCalendar {
   max-width: 100%;
   background-color: #ffffff;
   border-radius: 2px;
@@ -104,14 +104,18 @@
 }
 
 /* Fertile window */
-.fertile-window {
+.fertileWindow {
   background-color: #ff9d88;
   color: white;
   border-radius: 0px;
 }
 
 /* Hover and focus states for fertile window */
-.fertile-window:hover,
-.fertile-window:focus {
+.fertileWindow:hover,
+.fertileWindow:focus {
   background-color: #ff5c39;
+}
+
+.selectedDate {
+  margin-top: 10px;
 }

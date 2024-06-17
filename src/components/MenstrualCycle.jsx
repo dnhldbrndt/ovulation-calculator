@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import "../assets/style.css";
-import "../assets/calendar-style.css";
+import "../assets/cycle-style.css"; // Import CSS Module
 import Calendar from 'react-calendar';
 
 const MenstrualCycle = () => {
@@ -28,7 +27,7 @@ const MenstrualCycle = () => {
 
   const tileClassName = ({ date }) => {
     if (periodStartDates.some(d => d.getTime() === date.getTime())) {
-      return 'menstrual-cycle';
+      return "menstrualCycle"; // Correct CSS module class
     }
     return null;
   };
@@ -45,7 +44,7 @@ const MenstrualCycle = () => {
       </p>
       <div>
         <h3>Selected Period Start Dates:</h3>
-        <ul>
+        <ul style={{ listStyleType: "none" }}>
           {periodStartDates.map((date, index) => (
             <li key={index}>
               {date.toLocaleDateString()}
