@@ -13,7 +13,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #f4f4f4;
+    background-color: #ac45b1;
     border-bottom: 1px solid #ddd;
   }
   
@@ -26,7 +26,7 @@
   
   .calendar-days-of-week {
     display: flex;
-    background-color: #f4f4f4;
+    background-color: #ac45b1;
     border-bottom: 1px solid #ddd;
   }
   
@@ -46,11 +46,25 @@
     width: calc(100% / 7);
     text-align: center;
     padding: 10px;
+    color: white;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    background-color: #fa83ff;
+    border: 3px solid #7f1f83;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
-  .empty {
-    background-color: #f9f9f9;
+  .calendar-day.empty {
+    background-color: #7f1f83;
     border: none;
+  }
+  
+  .calendar-day.selected {
+    background-color: #ffee00;
+    border-color: #ecff83;
+    color: white;
+  }
+  
+  .calendar-day.highlighted {
+    background-color: #d61646;
   }

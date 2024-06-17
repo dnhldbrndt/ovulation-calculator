@@ -13,12 +13,12 @@ const Header = () => {
 return(
   <div>
     <div className="nav-header"><div className="nav-icons">
-    <img src={homeimg}   className="nav-img" alt=""/> 
-    <img src={calimg}  className="nav-img" alt=""/> </div>
+    <a href="/"><img src={homeimg}   className="nav-img" alt="home"/></a>
+    <a href="/"><img src={calimg}  className="nav-img" alt="calendar"/></a></div>
       <div className="main-title">Ovulation Calculator </div> 
       <div className="nav-icons">
-      <img src={cycleimg}   className="nav-img" alt=""/> 
-      <img src={crossimg}    className="nav-img" alt=""/> 
+      <a href="/cycle"><img src={cycleimg}   className="nav-img" alt="cycle"/> </a>
+      <a href="#"  ><img src={crossimg}    className="nav-img" alt="exit"/> </a>
       </div>
       </div>
   </div>

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './calendar.css';  
+import './calendar.css'; // You can create this file for styling
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const Calendar = ({ onDateSelect }) => {
+const Calendar = ({ onDateSelect, highlightDates = [] }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedDate, setSelectedDate] = useState(null);
 
@@ -18,10 +18,14 @@ const Calendar = ({ onDateSelect }) => {
   }
   for (let day = 1; day <= totalDays; day++) {
     const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    const isSelected = selectedDate && dayDate.toDateString() === selectedDate.toDateString();
+    const isHighlighted = highlightDates.some(
+      date => dayDate.toDateString() === date.toDateString()
+    );
     days.push(
       <div
         key={day}
-        className={`calendar-day ${selectedDate && dayDate.toDateString() === selectedDate.toDateString() ? 'selected' : ''}`}
+        className={`calendar-day ${isSelected ? 'selected' : ''} ${isHighlighted ? 'highlighted' : ''}`}
         onClick={() => handleDateClick(dayDate)}
       >
         {day}
@@ -39,7 +43,9 @@ const Calendar = ({ onDateSelect }) => {
 
   const handleDateClick = (date) => {
     setSelectedDate(date);
-    onDateSelect(date);
+    if (onDateSelect) {
+      onDateSelect(date);
+    }
   };
 
   return (

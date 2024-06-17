@@ -1,9 +1,9 @@
 .nav-header {
     border-radius: 5px;
-    background-color: darkviolet;
+    background-color: #29072b;
     color: white;
     font-size: 33px;
-    margin: 5px;
+    margin: 12px;
     padding: 8px;
     display: flex;
     align-items: center;

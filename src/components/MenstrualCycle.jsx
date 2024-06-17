@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import "../assets/cycle-style.css"; // Import CSS Module
-import Calendar from 'react-calendar';
-
+import "../assets/cycle-style.css";  
+import Cal from './Calendar/Calendar';
+import Header from './Header';
 const MenstrualCycle = () => {
   const [periodStartDates, setPeriodStartDates] = useState([]);
 
@@ -25,23 +25,17 @@ const MenstrualCycle = () => {
 
   const averageCycleLength = calculateAverageCycleLength();
 
-  const tileClassName = ({ date }) => {
-    if (periodStartDates.some(d => d.getTime() === date.getTime())) {
-      return "menstrualCycle"; // Correct CSS module class
-    }
-    return null;
-  };
+  const highlightDates = periodStartDates;
 
   return (
-    <div>
+    <div>      <Header/><div className="container">
       <h2>Determine Length of Menstrual Cycle</h2>
-      <p>To determine your menstrual cycle length, follow these steps:
-        <ul>
-          <li>Select the first day of your period on the calendar below.</li>
-          <li>Continue selecting the first day of your period for two more cycles.</li>
-          <li>Click on a selected date on the calendar to remove it.</li>
-        </ul>
-      </p>
+      <p>To determine your menstrual cycle length, follow these steps:</p>
+      <ul>
+        <li>Select the first day of your period on the calendar below.</li>
+        <li>Continue selecting the first day of your period for two more cycles.</li>
+        <li>Click on a selected date on the calendar to remove it.</li>
+      </ul>
       <div>
         <h3>Selected Period Start Dates:</h3>
         <ul style={{ listStyleType: "none" }}>
@@ -53,15 +47,15 @@ const MenstrualCycle = () => {
           ))}
         </ul>
       </div>
-      <Calendar
-        onClickDay={handleDateChange}
-        tileClassName={tileClassName}
+      <Cal
+        onDateSelect={handleDateChange}
+        highlightDates={highlightDates}
       />
       {averageCycleLength !== null && (
         <div>
           <h3>Average Cycle Length: {averageCycleLength} days</h3>
         </div>
-      )}
+      )}</div>
     </div>
   );
 }

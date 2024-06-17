@@ -40,7 +40,7 @@ const Calculator = () => {
 
   return (
     <div>
-      <Header/>
+      <Header/><div className="container">
       <Cal onDateSelect={handleDateChange} />
       <h2>First Day of Your Last Period</h2>
       {/* Removed CalendarView as it's replaced by Cal */}
@@ -51,7 +51,7 @@ const Calculator = () => {
           <p>Fertile Window: {fertileWindow.start.toDateString()} - {fertileWindow.end.toDateString()}</p>
           <Dates fertileWindow={fertileWindow} />
         </div>
-      )}
+      )}</div>
     </div>
   );
 }

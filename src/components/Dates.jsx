@@ -1,27 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import Calendar from 'react-calendar';
+import React from 'react';
+import Cal from './Calendar/Calendar';
 import "../assets/style.css";
 import "../assets/calendar-style.css";
- 
+
 const Dates = ({ fertileWindow }) => {
-  const tileClassName = ({ date, view }) => {
-    if (view === 'month' && fertileWindow) {
-      const { start, end } = fertileWindow;
-      if (date >= start && date <= end) {
-        return 'fertile-window';
-      }
+  const getHighlightDates = () => {
+    if (!fertileWindow) return [];
+    const { start, end } = fertileWindow;
+    const dates = [];
+    let currentDate = new Date(start);
+    while (currentDate <= end) {
+      dates.push(new Date(currentDate));
+      currentDate.setDate(currentDate.getDate() + 1);
     }
-    return null;
+    return dates;
   };
+
+  const highlightDates = getHighlightDates();
 
   return (
     <div>
       <h2>Fertile Window Calendar</h2>
-      <Calendar
-        tileClassName={tileClassName}
-      />
+      <Cal highlightDates={highlightDates} />
     </div>
   );
-}
+};
 
 export default Dates;
