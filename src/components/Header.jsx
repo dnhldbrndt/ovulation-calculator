@@ -12,13 +12,14 @@ const Header = () => {
 
 return(
   <div>
-    <div className="nav-header">
-    <img src={homeimg} style={{width:"5%",height:"5%"}}  alt=""/> 
-    <img src={calimg} style={{width:"5%",height:"5%"}}  alt=""/> 
-      <div>Ovulation Calculator </div> 
-      <img src={cycleimg} style={{width:"5%",height:"5%"}}  alt=""/> 
-      <img src={crossimg} style={{width:"5%",height:"5%"}}  alt=""/> 
-      
+    <div className="nav-header"><div className="nav-icons">
+    <img src={homeimg}   className="nav-img" alt=""/> 
+    <img src={calimg}  className="nav-img" alt=""/> </div>
+      <div className="main-title">Ovulation Calculator </div> 
+      <div className="nav-icons">
+      <img src={cycleimg}   className="nav-img" alt=""/> 
+      <img src={crossimg}    className="nav-img" alt=""/> 
+      </div>
       </div>
   </div>
 )
