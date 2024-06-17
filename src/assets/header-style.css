@@ -1,19 +1,29 @@
 .nav-header {
     border-radius: 5px;
     background-color: darkviolet;
-    color:white;
+    color: white;
     font-size: 33px;
     margin: 5px;
     padding: 8px;
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    flex-flow: space-between;
-    justify-content:  center;
+    align-items: center;
+    justify-content: space-between;
     gap: 15px;
 }
 
-.nav-img {
-        -webkit-filter: invert(1);
-        filter: invert(1);
+.nav-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-img {    
+    width: 24px;  
+    height: 24px;
+    -webkit-filter: invert(1);
+    filter: invert(1);
 }
