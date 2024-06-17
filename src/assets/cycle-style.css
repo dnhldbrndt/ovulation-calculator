@@ -7,57 +7,31 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Navigation container */
-.react-calendar__navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* Navigation buttons */
 .react-calendar__navigation button {
   color: #000;
   min-width: 44px;
   background: none;
   font-size: 1.2em;
-  margin: 8px; /* Adjust the margin to space the buttons as needed */
+  margin-top: 8px;
   border: none;
 }
 
-/* Month/Year text */
-.react-calendar__navigation span {
-  flex: 1;
-  text-align: center;
-}
-
-/* Disabled navigation buttons */
 .react-calendar__navigation button:disabled {
   background-color: #f0f0f0;
 }
 
-/* Hover and focus states for navigation buttons */
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
   background-color: #e0e0e0;
   border-radius: 25px;
 }
 
-/* Weekdays container */
+/* Weekdays */
 .react-calendar__month-view__weekdays {
-  display: flex;
-  justify-content: space-between;
   text-transform: uppercase;
   font-size: 0.75em;
   color: #6d6d6d;
-}
-
-/* Weekday tiles */
-.react-calendar__month-view__weekdays__weekday {
-  flex: 1;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* Days */
@@ -72,50 +46,39 @@
   box-sizing: border-box; /* Ensure padding and border are included in width */
 }
 
-/* Hover and focus states for days */
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
   background: #e0e0e0;
 }
 
-/* Current day */
 .react-calendar__tile--now {
   background: #ffff76;
   border-radius: 0px;
 }
 
-/* Hover and focus states for current day */
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
   background: #ffffa0;
 }
 
-/* Selected day */
 .react-calendar__tile--active {
   background: #ff0028;
   color: white;
   border-radius: 0px;
 }
 
-/* Hover and focus states for selected day */
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
   background: #ff0028;
 }
 
-/* Fertile window */
-.fertileWindow {
-  background-color: #ff9d88;
+.menstrualCycle {
+  background-color: #ff00e4;
   color: white;
   border-radius: 0px;
 }
 
-/* Hover and focus states for fertile window */
-.fertileWindow:hover,
-.fertileWindow:focus {
-  background-color: #ff5c39;
-}
-
-.selectedDate {
-  margin-top: 10px;
+.menstrualCycle:hover,
+.menstrualCycle:focus {
+  background-color: #ff00e4;
 }

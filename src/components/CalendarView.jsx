@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import "../assets/style.css";
 import Calendar from 'react-calendar';
+import "../assets/style.css";
+import  "../assets/calendar-style.css" 
 
 // Array of month names
 const months = [

@@ -1,0 +1,19 @@
+.nav-header {
+    border-radius: 5px;
+    background-color: darkviolet;
+    color:white;
+    font-size: 33px;
+    margin: 5px;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    flex-flow: space-between;
+    justify-content:  center;
+    gap: 15px;
+}
+
+.nav-img {
+        -webkit-filter: invert(1);
+        filter: invert(1);
+}
