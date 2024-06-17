@@ -1,11 +1,11 @@
-// src/Calendar.js
 import React, { useState } from 'react';
-import './calendar.css'; // You can create this file for styling
+import './calendar.css';  
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
-const Calendar = () => {
+const Calendar = ({ onDateSelect }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(null);
 
   const startOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
   const endOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
@@ -17,7 +17,16 @@ const Calendar = () => {
     days.push(<div key={`empty-${i}`} className="calendar-day empty"></div>);
   }
   for (let day = 1; day <= totalDays; day++) {
-    days.push(<div key={day} className="calendar-day">{day}</div>);
+    const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    days.push(
+      <div
+        key={day}
+        className={`calendar-day ${selectedDate && dayDate.toDateString() === selectedDate.toDateString() ? 'selected' : ''}`}
+        onClick={() => handleDateClick(dayDate)}
+      >
+        {day}
+      </div>
+    );
   }
 
   const handlePreviousMonth = () => {
@@ -26,6 +35,11 @@ const Calendar = () => {
 
   const handleNextMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1));
+  };
+
+  const handleDateClick = (date) => {
+    setSelectedDate(date);
+    onDateSelect(date);
   };
 
   return (

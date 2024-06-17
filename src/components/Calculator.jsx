@@ -41,9 +41,9 @@ const Calculator = () => {
   return (
     <div>
       <Header/>
-      <Cal/>
+      <Cal onDateSelect={handleDateChange} />
       <h2>First Day of Your Last Period</h2>
-      <CalendarView onDateChange={handleDateChange} />
+      {/* Removed CalendarView as it's replaced by Cal */}
       <Input value={averageCycleLength} onChange={handleCycleLengthChange} />
       {ovulationDay && fertileWindow && (
         <div>
