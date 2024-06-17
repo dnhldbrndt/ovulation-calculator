@@ -13,9 +13,21 @@ const Calendar = ({ onDateSelect, highlightDates = [] }) => {
   const totalDays = endOfMonth.getDate();
 
   const days = [];
-  for (let i = 0; i < startDay; i++) {
-    days.push(<div key={`empty-${i}`} className="calendar-day empty"></div>);
+
+  // Calculate the number of days in the previous month
+  const previousMonthEnd = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0);
+  const previousMonthDays = previousMonthEnd.getDate();
+
+  // Days from previous month
+  for (let i = startDay - 1; i >= 0; i--) {
+    days.push(
+      <div key={`prev-${i}`} className="calendar-day prev-month">
+        {previousMonthDays - i}
+      </div>
+    );
   }
+
+  // Days of current month
   for (let day = 1; day <= totalDays; day++) {
     const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
     const isSelected = selectedDate && dayDate.toDateString() === selectedDate.toDateString();

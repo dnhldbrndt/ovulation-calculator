@@ -68,3 +68,9 @@
   .calendar-day.highlighted {
     background-color: #d61646;
   }
+  
+  .calendar-day.prev-month {
+    color: #bbb; /* Lighter shade for previous month days */
+    background-color: #7f1f83;
+    border: none;
+  }
