@@ -20,8 +20,10 @@ const Calendar = ({ onDateSelect, highlightDates = [] }) => {
 
   // Days from previous month
   for (let i = startDay - 1; i >= 0; i--) {
+    const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, previousMonthDays - i);
+    const isHighlighted = highlightDates.some(date => date.toDateString() === dayDate.toDateString());
     days.push(
-      <div key={`prev-${i}`} className="calendar-day prev-month">
+      <div key={`prev-${i}`} className={`calendar-day prev-month ${isHighlighted ? 'highlighted' : ''}`}>
         {previousMonthDays - i}
       </div>
     );
@@ -31,15 +33,25 @@ const Calendar = ({ onDateSelect, highlightDates = [] }) => {
   for (let day = 1; day <= totalDays; day++) {
     const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
     const isSelected = selectedDate && dayDate.toDateString() === selectedDate.toDateString();
-    const isHighlighted = highlightDates.some(
-      date => dayDate.toDateString() === date.toDateString()
-    );
+    const isHighlighted = highlightDates.some(date => date.toDateString() === dayDate.toDateString());
     days.push(
       <div
         key={day}
         className={`calendar-day ${isSelected ? 'selected' : ''} ${isHighlighted ? 'highlighted' : ''}`}
         onClick={() => handleDateClick(dayDate)}
       >
+        {day}
+      </div>
+    );
+  }
+
+  // Calculate days from next month
+  const remainingDays = 42 - days.length; // 42 cells to fill (7 days * 6 weeks grid)
+  for (let day = 1; day <= remainingDays; day++) {
+    const dayDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, day);
+    const isHighlighted = highlightDates.some(date => date.toDateString() === dayDate.toDateString());
+    days.push(
+      <div key={`next-${day}`} className={`calendar-day next-month ${isHighlighted ? 'highlighted' : ''}`}>
         {day}
       </div>
     );

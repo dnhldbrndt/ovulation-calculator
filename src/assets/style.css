@@ -20,4 +20,16 @@ input[type=text]{
     margin: 8px 0;
     box-sizing: border-box;
 }
- 
+.selected-dates {
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+    margin: 2px;
+    padding: 2px;
+}
+.selected-dates button {
+    margin: 5px;
+    margin-left: 15px;
+    cursor: pointer;
+}

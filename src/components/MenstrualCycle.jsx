@@ -36,8 +36,8 @@ const MenstrualCycle = () => {
         <li>Continue selecting the first day of your period for two more cycles.</li>
         <li>Click on a selected date on the calendar to remove it.</li>
       </ul>
-      <div>
-        <h3>Selected Period Start Dates:</h3>
+      <div >
+        <h3>Selected Period Start Dates:</h3><div className="selected-dates">
         <ul style={{ listStyleType: "none" }}>
           {periodStartDates.map((date, index) => (
             <li key={index}>
@@ -45,7 +45,7 @@ const MenstrualCycle = () => {
               <button onClick={() => setPeriodStartDates(periodStartDates.filter(d => d !== date))}>X</button>
             </li>
           ))}
-        </ul>
+        </ul></div>
       </div>
       <Cal
         onDateSelect={handleDateChange}
